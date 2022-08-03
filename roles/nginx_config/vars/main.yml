@@ -1,0 +1,5 @@
+---
+# vars file for nginx_config
+
+document_root: /var/www/html
+app_root: html_demo_site

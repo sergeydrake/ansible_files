@@ -1,0 +1,7 @@
+---
+# tasks file for nginx_install
+#
+- name: Install Nginx
+  apt:
+     name: nginx
+     state: latest

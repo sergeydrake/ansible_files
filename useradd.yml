@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  become: yes
+#  remote_user: serj
+  become_user: root
+  become_method: sudo
+
+  roles:
+    - useradd
+
+...  

@@ -1,0 +1,21 @@
+---
+# tasks file for nginx_config
+
+- name: apply nginx template
+  template:
+    src: templates/nginx.conf.j2
+    dest: /etc/nginx/sites-available/default
+  notify: restart nginx
+
+- name: enable new site
+  file:
+    src: /etc/nginx/sites-available/default
+    dest: /etc/nginx/sites-enabled/default
+    state: link
+  notify: restart nginx
+
+- name: allow all access to tcp port 80
+  ufw:
+    rule: allow
+    port: '80'
+    proto: tcp

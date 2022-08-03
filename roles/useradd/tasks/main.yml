@@ -1,0 +1,9 @@
+---
+# tasks file for useradd
+- name: Add user & copy ssh key
+  import_tasks: user.yml
+  become: yes
+
+- name: Copy ssh config on servers
+  import_tasks: ssh.yml
+  become: yes

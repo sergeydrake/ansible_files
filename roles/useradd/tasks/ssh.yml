@@ -1,0 +1,12 @@
+---
+
+- name: copy SSH config on servers
+  template:
+    src: templates/ssh_config_temp
+    dest: /etc/ssh/sshd_config
+  register: sshd_config
+
+- name: restart ssh service
+  service:
+    name: sshd
+    state: restarted

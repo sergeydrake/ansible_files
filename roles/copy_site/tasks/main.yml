@@ -1,0 +1,8 @@
+---
+# tasks file for copy_site
+
+- name: Copy site to server
+  copy:
+    src: "{{ app_root }}"
+    dest: "{{ document_root }}"
+    mode: preserve

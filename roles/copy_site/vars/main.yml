@@ -1,0 +1,6 @@
+---
+# vars file for copy_site
+
+document_root: /var/www/html
+app_root: html_demo_site
+
